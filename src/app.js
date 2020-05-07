@@ -7,6 +7,7 @@ const weather = require('./utils/forecast');
 
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 //define paths for express config
 const publicDir=path.join(__dirname, '../public');
@@ -100,6 +101,6 @@ app.get('*', (req,res) =>{
         errorMessage : 'Page not found'
     })
 })
-app.listen(3000, () => {
-    console.log('server is up up on port 3000');
+app.listen(port, () => {
+    console.log('server is up up on port' + port);
 })
